@@ -1,7 +1,10 @@
 const express = require("express")
+const articleRouter = require("./routes/articles")
 const app = express()
 
 app.set("view engine", "ejs")
+
+app.use("/articles/", articleRouter)
 
 app.get("/", (req, res) => {
   const articles = [
@@ -16,7 +19,7 @@ app.get("/", (req, res) => {
       description: "We have described, again!",
     },
   ]
-  res.render("index", { articles: articles })
+  res.render("articles/index", { articles: articles })
 })
 
 const PORT = 8020
