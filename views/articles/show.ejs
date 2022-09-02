@@ -18,8 +18,8 @@
     <a href="/" class="btn btn-secondary">All Articles</a>
     <a href="/articles/edit/<%= article.id %>" class="btn btn-primary">Edit</a>
 
-    <div>
-      <%= article.markdown %>
+    <div class="mt-4">
+      <%- article.sanitizedHtml %>
     </div>
   </div>
 </body>
